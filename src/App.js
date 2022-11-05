@@ -25,13 +25,7 @@ function App() {
     operators.includes(input) && operators.includes(display.slice(-1))) {
       return;
     }
-
-    if(display === '0') {
-      setDisplay("") && setPreview("");
-    } else {
-      setDisplay(display + input);
-    }
-
+      
     if(!operators.includes(input)) {
       setPreview(eval(display + input).toString())
     }
@@ -39,6 +33,8 @@ function App() {
     if(display.length > 12) {
       limitReached();
     }
+      
+    setDisplay(display + input);
     
     } catch(e) {
         error();
