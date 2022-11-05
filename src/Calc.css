@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Roboto:wght@300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+body {
+    background-color: rgb(204 251 241);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#calculator {
+    height: 25rem;
+    width: 15rem;
+    background-color: white;
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.5);
+    background-color: white;
+    padding: 3px;
+    overflow: hidden;
+}
+
+#clear {
+    width: 50%;
+    background-color:brown;
+}
+
+#clear:hover {
+    color: black;
+    box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.5);
+}
+
+#zero {
+    width: 75%;
+}
+
+#equals {
+    background-color: darkcyan;
+}
+
+.operators {
+    background-color: darkgray;
+}
+
+#decimal {
+    background-color: darkslategray;
+}
+
+#decimal:hover {
+    color: black;
+    box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.5);
+}
+
+button {
+    margin: 0;
+    height: 17%;
+    width: 25%;
+    font-size: larger;
+    background-color: grey;
+    color: white;
+    border: 0.01rem solid white;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+button:hover {
+    opacity: 0.9;
+    color: black;
+    box-shadow: 0px 0px 14px -2px rgba(0,0,0,0.5);
+}
+
+button:focus {
+    color: black;
+}
+
+#display {
+    height: 11%;
+    width: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: xx-large;
+    color: black;
+}
+
+span {
+    font-size: small;
+}
+
+
+
+
+
