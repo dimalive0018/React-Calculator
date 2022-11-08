@@ -8,36 +8,37 @@ function App() {
   const [preview, setPreview] = useState("0");
 
   function calcVal(input) {
-    const operators = ['/', '*', '-', '+', '.']
+    const operators = ['/', '*', '-', '+']
+    const dot = ['.']
 
     function limitReached() {
       setDisplay("");
       setPreview("Limit Reached");
     }
-
-    function error() {
-      setDisplay("");
-      setPreview("Error")
-    }
     
     try {
-    if(operators.includes(input) && display === "" ||
-    operators.includes(input) && operators.includes(display.slice(-1))) {
-      return;
-    }
-      
-    if(!operators.includes(input)) {
-      setPreview(eval(display + input).toString())
-    }
+    
+      if(operators.includes(input) && display === "" ||
+        operators.includes(input) && operators.includes(display.slice(-1))) {
+        return;
+      }
 
-    if(display.length > 12) {
-      limitReached();
-    }
-      
-    setDisplay(display + input);
+      if(dot.includes(input) && display === "0") {
+        setDisplay("0.")
+      }
+
+      if(!operators.includes(input)) {
+        setPreview(eval(display + input).toString())
+      }
+
+      setDisplay(display + input);
+
+      if(display.length > 12) {
+        limitReached();
+      }
     
     } catch(e) {
-        error();
+        return delete display.slice(-1);
       }
   }
 
